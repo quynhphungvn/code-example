@@ -1,17 +1,31 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-  	<servlet-name>HomeController</servlet-name>
-  	<display-name>HomeController</display-name>
+  	<servlet-name>JspTestingController</servlet-name>
+  	<display-name>JspTestingController</display-name>
   	<description></description>
-  	<servlet-class>quynh.training.servlet_jsp.controller.HomeController</servlet-class>
+  	<servlet-class>quynh.training.servlet_jsp.controller.JspTestingController</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>HomeController</servlet-name>
-  	<url-pattern>/home</url-pattern>
+  	<servlet-name>JspTestingController</servlet-name>
+  	<url-pattern>/jsp-testing/*</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>JspInit</servlet-name>
+  	<display-name>JspInit</display-name>
+  	<description></description>
+  	<jsp-file>/jsp-init.jsp</jsp-file>
+  	<init-param>
+  		<param-name>Author</param-name>
+  		<param-value>Quynh Phung</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>JspInit</servlet-name>
+  	<url-pattern>/jsp-testing-init</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

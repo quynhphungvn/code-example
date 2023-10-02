@@ -15,35 +15,35 @@ public class RoleDaoImpl implements RoleDao {
 	private SessionFactory sessionFactory = HibernateConnection.getSessionFactory();
     public List<Role> getAll() {
         Session session = sessionFactory.openSession();
-        Query<Role> query = session.createQuery("FROM ERole");
-        List<Role> eRoles = query.list();
+        Query<Role> query = session.createQuery("FROM Role");
+        List<Role> roles = query.list();
         session.close();
-        return eRoles;
+        return roles;
     }
     public Role getById(int id) {
         Session session = sessionFactory.openSession();
-        Role eRole = session.get(Role.class, id);
+        Role role = session.get(Role.class, id);
         session.close();
-        return eRole;
+        return role;
     }
-    public void add(Role eRole) {
+    public void add(Role role) {
         Session session = sessionFactory.openSession();
         session.getTransaction().begin();
-        session.save(eRole);
+        session.save(role);
         session.getTransaction().commit();
         session.close();
     }
-    public void update(Role eRole) {
+    public void update(Role role) {
         Session session = sessionFactory.openSession();
         session.getTransaction().begin();
-        session.update(eRole);
+        session.update(role);
         session.getTransaction().commit();
         session.close();
     }
-    public void delete(Role eRole) {
+    public void delete(Role role) {
         Session session = sessionFactory.openSession();
         session.getTransaction().begin();
-        session.delete(eRole);
+        session.delete(role);
         session.getTransaction().commit();
         session.close();   
     }
